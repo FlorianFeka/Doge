@@ -17,13 +17,8 @@ func game_over():
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
-	$StartTimer.start()
-	$ScoreTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
-
-func _on_StartTimer_timeout():
-	$MobTimer.start()
 	$StartTimer.start()
 	
 func _on_MobTimer_timeout():
@@ -43,3 +38,8 @@ func _on_ScoreTimer_timeout():
 
 func _on_HUD_start_game():
 	new_game()
+
+func _on_StartTimer_timeout():
+	$MobTimer.start()
+	$ScoreTimer.start()
+	$StartTimer.stop()
