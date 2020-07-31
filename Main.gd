@@ -4,7 +4,6 @@ export (PackedScene) var Mob
 var score
 
 func _ready():
-	print("Ready")
 	randomize()
 
 
